@@ -1,0 +1,296 @@
+# // Exporting Language to UTF-8
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
+export LC_CTYPE='en_US.utf8'
+
+# // Export Color & Information
+export RED='\033[0;31m'
+export GREEN='\033[0;32m'
+export YELLOW='\033[0;33m'
+export BLUE='\033[0;34m'
+export PURPLE='\033[0;35m'
+export CYAN='\033[0;36m'
+export LIGHT='\033[0;37m'
+export NC='\033[0m'
+
+# // Export Banner Status Information
+export EROR="[${RED} EROR ${NC}]"
+export INFO="[${YELLOW} INFO ${NC}]"
+export OKEY="[${GREEN} OKEY ${NC}]"
+export PENDING="[${YELLOW} PENDING ${NC}]"
+export SEND="[${YELLOW} SEND ${NC}]"
+export RECEIVE="[${YELLOW} RECEIVE ${NC}]"
+
+# // Export Align
+export BOLD="\e[1m"
+export WARNING="${RED}\e[5m"
+export UNDERLINE="\e[4m"
+
+# // Exporting URL Host
+export Server_URL="autosc.me/aio"
+export Server_Port="443"
+export Server_IP="underfined"
+export Script_Mode="Stable"
+export Auther="XdrgVPN"
+
+CHATID=$(grep -E "^#bot# " "/etc/bot/.bot.db" | cut -d ' ' -f 3)
+KEY=$(grep -E "^#bot# " "/etc/bot/.bot.db" | cut -d ' ' -f 2)
+export TIMES="10"
+export URL="https://api.telegram.org/bot$KEY/sendMessage"
+
+WH='\033[1;37m'
+
+clear
+nama=$(cat /etc/xray/username)
+IP=$(curl -sS ipv4.icanhazip.com)
+ISP=$(cat /etc/xray/isp)
+CITY=$(cat /etc/xray/city)
+domain=$(cat /etc/xray/domain)
+if [ ! -e /etc/xray/noobz/akun ]; then
+mkdir -p /etc/xray/noobz/akun
+fi
+function create(){
+clear
+echo -e "${RED}╭═════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}              ${WH}• SSH PANEL MENU •               ${NC}${RED} │ $NC"
+echo -e "${RED}╰═════════════════════════════════════════════════╯${NC}"
+read -p "Username: " user
+read -p "Password: " pass
+read -p "Exp (0 for unlimited days):" exp
+read -p "IP LIMIT " ip
+
+if [ ! -e /etc/sfvpn/limit/noobs/ip/ ]; then
+  mkdir -p /etc/sfvpn/limit/noobs/ip/
+fi
+echo "$ip" > /etc/sfvpn/limit/noobs/ip/$user
+
+noobzvpns --add-user $user $pass --expired-user $user $exp
+echo -e "### $user $pass $exp" >> /etc/xray/noob
+
+
+clear
+
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+echo -e "${GREEN}| \E[44;1;39m      °NOOBZVPN'S ACCOUNT°            \E[0m|"
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+echo ""
+echo -e "DOMAIN : $( cat /etc/xray/domain )"
+echo -e "USERNAME: $user"
+echo -e "PASSWORD: $pass"
+echo -e "IP LIMIT: $ip"
+echo -e "EXP DAYS: $exp DAYS"
+echo -e "tcp_std port:  8080"
+echo -e "tcp_ssl port: 8443"
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+echo -e "Example config TCP_STD 8080"
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+echo ""
+echo -e "EN7O4DXAIyDVJrPpjPYKrQqo/GquMMlsriivwhce/oci7DAq0Yxz3IkWIZbmJP8GtkEXP3nlLBXmIiExeu8bVxT8PT2pz5bfUu1DWHVFh2bXFAIoerNst6vIwmSOpdtAiLOhZH6J8voH2b5ofrm/defIRgGBSmPFyCDenWY8esqcgYdOLSFrpdxcoAvMxvDKisrx5102imO/GhIiS58NZ40T/xZfosySVrStWGB92zMf13Zern6B4wn8n1eK69A6DtMXJwsdgLm13ahqjrxqiKjbbePnvoT6gyaRYQn6QOxzSC2yBawQjzuqSRPkfY23EXLS+iRV3SkxBnp/fpkU2adqIUh0cG5Pj2p5EQvUndGxQoUIp79WTfYvaeIZrBdk1NRBUInI/2GN1wIKvSRF4tmMsuTYPXlJ8fvNFcvvuYLPvx/o1ENH8UAB5Ajyl7s7j2yOwFPeTI5SYCXyj0P2A9nSAfEMpF6NE3jPSrIg38gLFNDcW9WSJwywe1RZNeN7hABFq8kdYCHSTZjNh/+3uEySkDyaxi7YPbdQVMxM9quBRbYgbx/4SxZ7WHmo6jcnjE/9q3IJ92YteLfDMgymSay+zlkiiodLOJAc1ns="
+echo ""
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+echo -e "Example config TCP_SSL 8443"
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+echo ""
+
+echo -e "EDfIwuHJdVRKJGSiQb0C/6yI9eY15qqrE1sHdos5f6iPGjjW144bOFTb1qpBjGn7XEwhXXafdBNLZkDUC42xdPN/5FMHqH82nhV4jlnZrY9OMRlpJQPfwDFkhmS5o72w1W6gvsz3liuAmgQbG/DCrrBNQ11qXXI/YGpBRX1yOgu4kmBAP4vQGL4jcRbynIOKYMmyrZz5Ph8C8sxO243LdhrmAA4+OuXeajlZIbGLtgJqN0+/1Hoik/ZqgVtBhOsJyL3YfNp1wrsbr6Y4QyTJIAVkvjcrD1Fhd95xiMLugjAnkkoLASIcJ2mp8TaBA7QuROeZNdwdml+1qqldoVhQbODtZMtE8FUL01Wz/9Np+Z8VUuqMqexDrSaD25i/O+0BdCLb/58Gt4+rkauOiNj8+w17+DZ6billHEN1UGP3FMiJWJyS1q8S4EIubO3xlebQzKHcKF631Rv1DtI7UyGlHDb/PTioDEg/PRxhSK/u5FUfBMM3lQWfBBxVvpELbm69xFJDqY7uGwjbrILw//duiNFQxCyMW6qGWZ2m3RSI/PXmjVJ8CjQMFyFMOUZWoOwzQCQkYcBiYZbWKOcunrvfEb+VjA=="
+echo ""
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+echo -e "${GREEN}| \E[44;1;39m          • $nama •            \E[0m|"
+echo -e "${GREEN}◇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◇\033[0m${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+
+
+function delete(){
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}              ${WH}• DELETE NOOBZ •                   ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+grep -E "^### " "/etc/xray/noob" | cut -d ' ' -f 2-3 | nl -s ') '
+read -p "username :" user
+sed -i "/\b$user\b/d" /etc/xray/noob
+noobzvpns --remove-user $user
+expi=`date -d "$exp days" +"%Y-%m-%d"`
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}              ${WH}• DELETE NOOBZ •                   ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo -e ""
+echo -e "$WH USERNAME $user HAS BEEN DELETE $NC"
+echo -e "$WH EXPIRED : $expi $NC"
+echo -e ""
+TEXT="
+<code>◇━━━━━━━━━━━━━━◇</code>
+<code>  DELETE NOOBZVPNS</code>
+<code>◇━━━━━━━━━━━━━━◇</code>
+<code>DOMAIN   :</code> <code>${domain} </code>
+<code>ISP      :</code> <code>$ISP $CITY </code>
+<code>USERNAME :</code> <code>$user</code>
+<code>EXPIRED  :</code> <code>$expi </code>
+<code>◇━━━━━━━━━━━━━━◇</code>
+<i>Succes Delete This User...</i>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+cd
+echo -e "${RED}╭══════════════════════ • ${WH}BY${NC}${COLOR1} • ═══════════════════════╮${NC}"
+echo -e "${RED}${NC}          ${WH}       • $nama •                 ${RED} $NC"
+echo -e "${RED}╰═════════════════════════════════════════════════════╯${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+
+
+function renew(){
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}              ${WH}• RENEW NOOBZ •                    ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+read -p "username: " user
+read -p "expired?: " exp
+noobzvpns --renew-user $user --expired-user $user $exp
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}              ${WH}• RENEW NOOBZ •                    ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo "USERNAME: $user"
+echo "renew success!!"
+echo -e "${RED}╭══════════════════════ • ${WH}BY${NC}${COLOR1} • ═══════════════════════╮${NC}"
+echo -e "${RED}${NC}          ${WH}       • $nama •                 ${RED} $NC"
+echo -e "${RED}╰═════════════════════════════════════════════════════╯${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+
+
+
+
+function lock(){
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}              ${WH}• LOCK  NOOBZ •                    ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+read -p "username: " user
+noobzvpns --block-user $user
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}              ${WH}• LOCK  NOOBZ •                    ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo "USERNAME: $user"
+echo "locked success!!"
+echo -e "${RED}╭══════════════════════ • ${WH}BY${NC}${COLOR1} • ═══════════════════════╮${NC}"
+echo -e "${RED}${NC}          ${WH}       • $nama •                 ${RED} $NC"
+echo -e "${RED}╰═════════════════════════════════════════════════════╯${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+
+
+
+
+
+
+function show(){
+
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}             ${WH}• MEMBER  NOOBZ •                   ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+noobzvpns --info-all-user | awk '/^\s*\+.*-> active/ {gsub(/(issued\(yyyymmdd\)|hash_key): [0-9a-f]+/, ""); print; getline; print; getline; getline; getline; print; print "═══════════════════"}'
+
+echo -e "${RED}╭══════════════════════ • ${WH}BY${NC}${COLOR1} • ═══════════════════════╮${NC}"
+echo -e "${RED}${NC}          ${WH}       • $nama •                 ${RED} $NC"
+echo -e "${RED}╰═════════════════════════════════════════════════════╯${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+
+}
+
+
+
+function unlock(){
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}             ${WH}• UNLOCK  NOOBZ •                   ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+read -p "username: " user
+noobzvpns --unblock-user $user
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}             ${WH}• UNLOCK  NOOBZ •                   ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo "USERNAME: $user"
+echo "unlocked success!!"
+echo -e "${RED}╭══════════════════════ • ${WH}BY${NC}${COLOR1} • ═══════════════════════╮${NC}"
+echo -e "${RED}${NC}          ${WH}      • $nama •                 ${RED} $NC"
+echo -e "${RED}╰═════════════════════════════════════════════════════╯${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+
+
+
+function remove(){
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}             ${WH}• REMOVE  NOOBZ •                   ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+
+read -p "Apakah Anda ingin menghapus semua user? (Y/N): " choice
+
+if [ "$choice" == "Y" ] || [ "$choice" == "y" ]; then
+    # Eksekusi perintah di sini
+    echo "MENGHAPUS SEMUA USER!"
+noobzvpns --remove-all-user
+elif [ "$choice" == "N" ] || [ "$choice" == "n" ]; then
+    echo "Membatalkan penghapusan."
+menu-noobzvpns
+else
+    echo "Pilihan tidak valid."
+fi
+
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}             ${WH}• REMOVE  NOOBZ •                   ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo "USERNAME: $user"
+echo "unlocked success!!"
+echo -e "${RED}╭══════════════════════ • ${WH}BY${NC}${COLOR1} • ═══════════════════════╮${NC}"
+echo -e "${RED}${NC}          ${WH}       • $nama •                 ${RED} $NC"
+echo -e "${RED}╰═════════════════════════════════════════════════════╯${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+}
+
+
+
+
+clear
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ ${NC}${COLBG1}                 ${WH}• NOOBZ PANEL MENU •            ${NC}${RED} │ $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo -e "${RED}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e "${RED}│ $NC  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD AKUN${NC}      ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}DELETE USER${NC}   ${RED} $NC"
+echo -e "${RED}│ $NC  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SHOW AKUN${NC}     ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}LOCKED USER${NC}    ${RED} $NC"
+echo -e "${RED}│ $NC  ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}RENEW AKUN${NC}    ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}UNLOCKED USER${NC}    ${RED} $NC"
+echo -e "${RED}│ $NC  ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}       ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}REMOVE ALL USER${NC}    ${RED} $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo -e "${RED}╭═════════════════════${WH} • BY • ${NC}${RED}══════════════════════╮${NC}"
+echo -e "${RED}${NC}            ${WH}      • $nama •                 ${RED} $NC"
+echo -e "${RED}╰═══════════════════════════════════════════════════╯${NC}"
+echo -e ""
+echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
+case $opt in
+01 | 1) clear ; create ;;
+02 | 2) clear ; show ;;
+03 | 3) clear ; renew ;;
+04 | 4) clear ; delete ;;
+05 | 5) clear ; lock ;;
+06 | 6) clear ; unlock ;;
+07 | 7) clear ; remove ;;
+100) clear ; $up2u ;;
+00 | 0) clear ; menu ;;
+*) clear ; menu ;;
+esac
+
